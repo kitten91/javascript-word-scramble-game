@@ -22,10 +22,10 @@
 
             // prompt the user to guess the original word when given the scrambled word
             var guess = prompt("Here is your word scramble " + scrambledWord + "\nWhat is your Guess?");
-
+            var lower_guess = guess.toLowerCase();
             // If the user guesses the correct word, congratulate them.
             // If the user guesses wrong, tell them they were wrong and the right word.
-            if (guess == randomWord) {
+            if (lower_guess == randomWord) {
                 alert("Congratulations! You are correct.");
             }
             else {
