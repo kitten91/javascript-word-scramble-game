@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Word Scramble</title>
+</head>
+<body>
+    <h1>A Javascript Word Scramble Game</h1>
+
+    <script>
+        var WORDS     = ["booger", "apple", "hackbright", "mango"];
+        var SCRAMBLED = ["oogreb", "papel", "backrhight", "goman"];
+
+        var playing = true;
+
+        while (playing) {
+            // Grab a random word from the WORDS array
+            var index = Math.floor(Math.random() * 4)
+            var randomWord = WORDS[index]
+
+            // Grab the corresponding scrambled word from the SCRAMBLED array
+            var scrambledWord = SCRAMBLED[index]
+
+            // prompt the user to guess the original word when given the scrambled word
+            var guess = prompt("Here is your word scramble " + scrambledWord + "\nWhat is your Guess?");
+
+            // If the user guesses the correct word, congratulate them.
+            // If the user guesses wrong, tell them they were wrong and the right word.
+            if (guess == randomWord) {
+                alert("Congratulations! You are correct.");
+            }
+            else {
+                alert("Your answer is wrong! The correct word was " + randomWord);
+            }
+
+            playing = confirm("Press OK To keep playing or Cancel to quit");
+            // What does confirm() return? a: It's the button press on the prompt
+            // What does setting the playing variable do? a: verifies if user still wants to play
+        }
+
+        alert("goodbye!");
+    </script>
+    
+</body>
+</html>
